@@ -87,9 +87,9 @@ export const mapDispatchToProps = (dispatch) => {
 
 export const mapStateToProps = (state) => {
   return {
-    singleUSerData: state.data,
-    allUserData: state.allUserData,
-    loading: state.loading,
+    singleUSerData: state.user.data,
+    allUserData: state.user.allUserData,
+    loading: state.user.loading,
   };
 };
 

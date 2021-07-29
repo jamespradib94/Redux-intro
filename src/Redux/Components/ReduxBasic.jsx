@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 function ReduxBasic(props) {
   const dispatch = useDispatch();
-  const counter = useSelector((state) => state.counter);
+  const counter = useSelector((state) => state.user.counter);
   const handleIncrease = () => {
     dispatch({ type: "Increase" });
   };

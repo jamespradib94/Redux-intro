@@ -66,6 +66,7 @@
   color: black;
   text-indent: -9999em;
   margin: 88px auto;
+  margin-top: 352px;
   position: relative;
   font-size: 11px;
   -webkit-transform: translateZ(0);
@@ -113,6 +114,19 @@
   background-color: #231F99;
   border-color: #231F99;
   
+}
+.table {
+  border-collapse: separate;
+  text-indent: initial;
+  border-spacing: 2px;
+}
+.table, td, th {
+  border: 1px solid black;
+  margin: auto;
+}
+.td{
+  display: table-cell;
+  vertical-align: inherit;
 }
 .btn:hover{
   background-color: rgb(68, 0, 255);

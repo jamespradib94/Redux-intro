@@ -6,7 +6,7 @@ export const getDataAction = async (data) => {
   return response.data;
 };
 
-export const getAllDataAction = async(data)=>{
+export const getAllDataAction = async()=>{
   const url = `https://api.github.com/users`;
   const response = await axios.get(url);
   return response.data;

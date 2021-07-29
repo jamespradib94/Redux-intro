@@ -6,7 +6,7 @@ const initState = {
   errorMessage:""
 };
 
-const reducer = (state = initState, action) => {
+const userReducer = (state = initState, action) => {
   switch (action.type) {
     case "Loading":
       return { ...state, loading: action.loading };
@@ -29,4 +29,4 @@ const reducer = (state = initState, action) => {
   }
 };
 
-export default reducer;
+export default userReducer;

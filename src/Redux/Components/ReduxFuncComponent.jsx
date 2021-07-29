@@ -5,11 +5,11 @@ function ReduxFuncComponent(props) {
   const dispatch = useDispatch();
   const [data, setData] = React.useState("");
 
-  const singleUSerData = useSelector((state) => state.data);
-  const allUserData = useSelector((state) => state.allUserData);
-  const loading = useSelector((state) => state.loading);
-  const counter = useSelector((state) => state.counter);
-  const errorMessage = useSelector((state) => state.errorMessage);
+  const singleUSerData = useSelector((state) => state.user.data);
+  const allUserData = useSelector((state) => state.user.allUserData);
+  const loading = useSelector((state) => state.user.loading);
+  const counter = useSelector((state) => state.user.counter);
+  const errorMessage = useSelector((state) => state.user.errorMessage);
 
   const handleChange = (e) => {
     setData(e.target.value);
@@ -83,20 +83,30 @@ function ReduxFuncComponent(props) {
           ) : (
             <div> {errorMessage} </div>
           )}
-          {allUserData &&
-            allUserData.map((x, i) => {
-              return (
-                <div key={i}>
-                  <div className="form-row ml">
-                    <span>{x.id} </span>
-                    <span> {x.login}</span>
-                  </div>
-                  <div className="form-row ml">
-                    <span> {x.url}</span>
-                  </div>
-                </div>
-              );
-            })}
+
+          {allUserData.length > 0 && (
+            <table className="table">
+              <thead>
+                <tr>
+                <th>#</th>
+                <th>ID</th>
+                <th>URL</th>
+                </tr>
+              </thead>
+              <tbody>
+                {allUserData &&
+                  allUserData.map((x, i) => {
+                    return (
+                      <tr key={i}>
+                        <td>{x.id}</td>
+                        <td>{x.login}</td>
+                        <td>{x.url}</td>
+                      </tr>
+                    );
+                  })}
+              </tbody>
+            </table>
+          )}
           {/* <button
             id="button"
             className="btn btn-secondary"
